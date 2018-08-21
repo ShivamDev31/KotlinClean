@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.novoda.build-properties'
+apply plugin: 'kotlin-kapt'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.novoda:gradle-build-properties-plugin:0.4.1'
+    }
+}
+
+buildProperties {
+    dev {
+        using rootProject.file('resources/environments/dev.properties')
+    }
+    prod {
+        using(rootProject.file('resources/environments/production.properties')).or(dev)
+    }
+    local {
+        using rootProject.file('local.properties')
+    }
+}
+
+android {
+    compileSdkVersion versions.androidSdk.compile
+
+    defaultConfig {
+        applicationId "io.kotlin.kotlinclean"
+        minSdkVersion versions.androidSdk.min
+        targetSdkVersion versions.androidSdk.target
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions 'environment'
+
+    productFlavors.all { flavor ->
+        flavor.ext.from = { flavorProperties ->
+            logger.debug ">>> Configuring '${flavor.name}' flavor using '${flavorProperties.name}' build properties"
+            dimension 'environment'
+            flavor.applicationId flavorProperties['applicationId'].string
+            flavor.versionCode = flavorProperties['versionCode'].int
+            flavor.versionName flavorProperties['versionName'].string
+            flavor.buildConfigString 'BASE_URL', (buildProperties.local['baseUrl'] | flavorProperties['baseUrl'])
+        }
+    }
+
+    productFlavors {
+        dev {
+            from buildProperties.dev
+        }
+        production {
+            from buildProperties.prod
+        }
+    }
+}
+
+dependencies {
+    implementation project(':core')
+
+    //kapt libraries.app.autoValue.processor
+    kapt libraries.app.dagger.processor
+    kapt libraries.app.dagger.android.processor
+    //kapt libraries.app.autoValue.parcelable.processor
+    //kapt libraries.app.autoValue.moshi.processor
+
+    //provided libraries.app.autoValue.annotations
+    //provided libraries.app.autoValue.moshi.annotations
+    implementation libraries.app.kotlin
+    implementation libraries.support.appcompat
+    implementation libraries.support.v4
+    implementation libraries.support.recyclerview
+
+    implementation libraries.app.dagger.runtime
+    implementation libraries.app.dagger.android.runtime
+    implementation libraries.app.dagger.android.support
+    implementation libraries.app.rxAndroid
+
+    implementation libraries.app.picasso
+
+    testImplementation libraries.test.junit
+    testImplementation libraries.test.truth
+    testImplementation libraries.test.mockito
+    testImplementation libraries.test.robolectric.core
+    testImplementation libraries.test.robolectric.multidex
+}
+repositories {
+    mavenCentral()
+}
