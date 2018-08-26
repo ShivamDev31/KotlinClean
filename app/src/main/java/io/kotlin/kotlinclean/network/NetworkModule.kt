@@ -30,6 +30,10 @@ class NetworkModule(private val application: Application) {
     @Singleton
     fun retrofitWithDefaultCache(httpUrl: HttpUrl): Retrofit {
         return NetworkDefaults.retrofit()
+                .newBuilder()
+                .client(newOkHttpClientWith(defaultCache))
+                .baseUrl(baseUrl())
+                .build()
     }
 
     private fun createCache(application: Application, defaultCache: String): File {
