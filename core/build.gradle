@@ -33,9 +33,11 @@ dependencies {
     implementation libraries.app.rxJava
     implementation libraries.app.javaxInject
     implementation libraries.app.okHttp
+    implementation libraries.app.okHttpLogging
     implementation libraries.app.retrofit.lib
     implementation libraries.app.retrofit.rxJavaAdapter
     implementation libraries.app.retrofit.moshiConverter
+    implementation libraries.app.moshi
 
     //compileOnly libraries.app.autoValue.annotations
     //apt libraries.app.autoValue.processor

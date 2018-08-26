@@ -69,6 +69,7 @@ ext {
                             ]
                     ],
                     okHttp         : "com.squareup.okhttp3:okhttp:${versions.okHttp}",
+                    okHttpLogging  : "com.squareup.okhttp3:logging-interceptor:${versions.okHttp}",
                     reactiveNetwork: 'com.github.pwittchen:reactivenetwork-rx2:0.12.2',
                     javaxInject    : 'javax.inject:javax.inject:1',
                     google         : [

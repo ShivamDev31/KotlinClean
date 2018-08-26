@@ -85,7 +85,10 @@ dependencies {
     implementation libraries.app.dagger.android.runtime
     implementation libraries.app.dagger.android.support
     implementation libraries.app.rxAndroid
+    implementation libraries.app.retrofit.lib
+    implementation libraries.app.okHttpLogging
 
+    implementation libraries.app.moshi
     implementation libraries.app.picasso
 
     testImplementation libraries.test.junit
