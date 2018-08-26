@@ -68,14 +68,8 @@ android {
 dependencies {
     implementation project(':core')
 
-    //kapt libraries.app.autoValue.processor
     kapt libraries.app.dagger.processor
     kapt libraries.app.dagger.android.processor
-    //kapt libraries.app.autoValue.parcelable.processor
-    //kapt libraries.app.autoValue.moshi.processor
-
-    //provided libraries.app.autoValue.annotations
-    //provided libraries.app.autoValue.moshi.annotations
     implementation libraries.app.kotlin
     implementation libraries.support.appcompat
     implementation libraries.support.v4
