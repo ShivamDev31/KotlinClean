@@ -18,7 +18,7 @@ buildProperties {
         using rootProject.file('resources/environments/dev.properties')
     }
     prod {
-        using(rootProject.file('resources/environments/production.properties')).or(dev)
+        (using(rootProject.file('resources/environments/production.properties')) | dev)
     }
     local {
         using rootProject.file('local.properties')
