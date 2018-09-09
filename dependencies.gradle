@@ -23,7 +23,7 @@ ext {
             okHttp             : '3.6.0',
             playService        : '11.8.0',
             robolectric        : '3.7.1',
-            picasso            : '2.71828'
+            glide              : '4.8.0'
     ]
     gradlePlugins = [
             androidBuild  : 'com.android.tools.build:gradle:3.1.4',
@@ -39,8 +39,9 @@ ext {
     libraries = [
             app     : [
                     kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${versions.kotlin}",
-                    rxJava         : 'io.reactivex.rxjava2:rxjava:2.0.7',
-                    rxAndroid      : 'io.reactivex.rxjava2:rxandroid:2.0.1',
+                    rxJava         : 'io.reactivex.rxjava2:rxjava:2.2.2',
+                    rxKotlin       : 'io.reactivex.rxjava2:rxkotlin:2.3.0',
+                    rxAndroid      : 'io.reactivex.rxjava2:rxandroid:2.1.0',
                     moshi          : 'com.squareup.moshi:moshi:1.4.0',
                     retrofit       : [
                             lib           : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
@@ -63,7 +64,8 @@ ext {
                     google         : [
                             gcm: "com.google.android.gms:play-services-gcm:${versions.playService}"
                     ],
-                    picasso        : "com.squareup.picasso:picasso:${versions.picasso}",
+                    glide          : "com.github.bumptech.glide:glide:${versions.glide}",
+                    glideProcessor : "com.github.bumptech.glide:compiler:${versions.glide}"
             ],
 
             test    : [

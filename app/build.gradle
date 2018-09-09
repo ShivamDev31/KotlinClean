@@ -70,6 +70,7 @@ dependencies {
 
     kapt libraries.app.dagger.processor
     kapt libraries.app.dagger.android.processor
+    kapt libraries.app.glideProcessor
     implementation libraries.app.kotlin
     implementation libraries.support.appcompat
     implementation libraries.support.v4
@@ -83,7 +84,7 @@ dependencies {
     implementation libraries.app.okHttpLogging
 
     implementation libraries.app.moshi
-    implementation libraries.app.picasso
+    implementation libraries.app.glide
 
     testImplementation libraries.test.junit
     testImplementation libraries.test.truth
