@@ -1,0 +1,87 @@
+{
+  "status": {
+    "code": 200,
+    "message": "Test Feed."
+  },
+    "healthStories": [
+      {
+        "code": "11",
+        "parentCode": null,
+        "type": "Ad",
+        "title": "Get Health Tests Done from Comfort of your Home",
+        "body": "It is well known that ‘prevention is better than cure’ and this package is designed specifically for that purpose. It includes a unique diagnostic profile of tests for a comprehensive health evaluation at an early age. It screens the most common diseases like thyroid, heart, liver, kidney, bones and anemia. This package is also ideal for those already suffering from diabetes, kidney or liver disease, to monitor the progress of their treatment.",
+        "mediaList": [
+          {
+            "path": "http://www.ancestryimages.com/stockimages/sm0112-Essex-Moule-l.jpg",
+            "type": "image"
+          }
+        ],
+        "tag": "Full Body",
+        "supportText": "Limited time offer. Avail Now!"
+      },
+      {
+        "code": "16",
+        "type": "Tip",
+        "postedOn": 1431170600201,
+        "title": " Neurobics for your mind.",
+        "body": "Get your brain fizzing with energy. American researchers coined the term ‘neurobics’ for tasks which activate the brain's own biochemical pathways and to bring new pathways online that can help to strengthen or preserve brain circuits. ",
+        "mediaList": [
+          {
+            "path": "http://www.antiqueprints.com/images/ai0/i0772.jpg",
+            "type": "image"
+          }
+        ],
+        "tag": "Stretching",
+        "supportText": "stretching exercises"
+      },
+      {
+        "code": "12",
+        "type": "Tip",
+        "title": "Brush up on hygiene",
+        "postedOn": 1431000600201,
+        "body": "TMany people don't know how to brush their teeth properly. Improper brushing can cause as much damage to the teeth and gums as not brushing at all. Lots of people don’t brush for long enough, don’t floss and don’t see a dentist regularly. Hold your toothbrush in the same way that would hold a pencil, and brush for at least two minutes. ",
+        "mediaList": [
+          {
+            "path": "http://www.ancestryimages.com/stockimages/sm0004-WorldKitchin1777.jpg",
+            "type": "image"
+          }
+        ],
+        "tag": "Full Body",
+        "supportText": "Limited time offer. Avail Now!"
+      },
+      {
+        "code": "14",
+        "type": "Question",
+        "postedOn": 1532679629375,
+        "title": "Will a person with Type 2 diabetes under control end up with the need for insulin?",
+        "body": "As you may have read, Type 2 diabetes is a progressive disease. Will you require insulin? That all depends on individual factors that includes, among many other factors, weight, exercise, genetics, hormones and beta-cells, those cells that produce insulin in your pancreas. Research shows that managing your diabetes early in the disease process can have big payoffs in later years. Joining a support group for people with diabetes can be helpful in keeping you going in your health quest. Following up with your health care team regularly and keeping abreast on the new developments in diabetes management can also benefit you.",
+        "bookMarked": false,
+        "thanked": false,
+        "tag": "Stretching",
+        "supportText": "stretching exercises",
+        "mediaList": [
+          {
+            "path": "http://www.ancestryimages.com/stockimages/sm0118-York-plan(g387)-l.jpg",
+            "type": "image"
+          }
+        ]
+      },
+      {
+        "code": "13",
+        "parentCode": null,
+        "type": "Quiz",
+        "postedOn": 1532170600201,
+        "title": "Take current affairs quizzes from different categories such as science & technology, national, sports etc. and check your score instantly. This will give you a fair idea about in which section you need to focus more for the upcoming competitive exams.",
+        "body": "Nowadays, there is a separate section for General knowledge in most of the competitive exams and interviews, which plays a major role in final merit listing of Candidates.History is very useful for those aspirants who are preparing for competitive exams such as Written test of Bank Exams, CAT Exams, Railway Exams, SSC, UPSC,Banking,Insurance, Defence and many more.",
+        "mediaList": [
+          {
+            "path": "http://www.antiqueprints.com/images/ai0/i0773.jpg",
+            "type": "image"
+          }
+        ],
+        "url":"https://www.britannica.com/quiz/browse",
+        "tag": "Stretching",
+        "supportText": "stretching exercises"
+      }
+    ]
+}
