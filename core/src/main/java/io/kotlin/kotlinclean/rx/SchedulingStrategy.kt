@@ -29,7 +29,7 @@ class SchedulingStrategy<T>(private val subscribingScheduler: Scheduler, private
         }
 
         fun getSubscribingScheduler(): Scheduler {
-            return subscribingScheduler;
+            return subscribingScheduler
         }
 
     }

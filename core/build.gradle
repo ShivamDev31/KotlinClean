@@ -1,3 +1,4 @@
+apply plugin: 'java-library'
 apply plugin: 'kotlin'
 apply plugin: 'kotlin-kapt'
 
@@ -29,18 +30,15 @@ compileTestKotlin {
 }
 
 dependencies {
-    implementation libraries.app.kotlin
+    api libraries.app.kotlin
     implementation libraries.app.rxJava
     implementation libraries.app.javaxInject
     implementation libraries.app.okHttp
-    implementation libraries.app.okHttpLogging
-    implementation libraries.app.retrofit.lib
+    api libraries.app.okHttpLogging
+    api libraries.app.retrofit.lib
     implementation libraries.app.retrofit.rxJavaAdapter
     implementation libraries.app.retrofit.moshiConverter
-    implementation libraries.app.moshi
-
-    //compileOnly libraries.app.autoValue.annotations
-    //apt libraries.app.autoValue.processor
+    api libraries.app.moshi
 
     testImplementation libraries.test.truth
     testImplementation libraries.test.junit
