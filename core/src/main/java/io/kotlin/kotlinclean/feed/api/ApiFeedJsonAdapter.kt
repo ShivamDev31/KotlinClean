@@ -26,7 +26,7 @@ class ApiFeedJsonAdapter(private val mediaAdapter: JsonAdapter<List<ApiMedia>>) 
     }
 
     private fun readAd(componentJson: Map<String, Any>): ApiFeed {
-        val code = componentJson["code"] as Int
+        val code = Integer.valueOf(componentJson["code"] as String) as Int
         val title = componentJson["title"] as String
         val body = componentJson["body"] as String
         val tag = componentJson["tag"] as String
@@ -36,7 +36,7 @@ class ApiFeedJsonAdapter(private val mediaAdapter: JsonAdapter<List<ApiMedia>>) 
     }
 
     private fun readTip(componentJson: Map<String, Any>): ApiFeed {
-        val code = componentJson["code"] as Int
+        val code = Integer.valueOf(componentJson["code"] as String) as Int
         val title = componentJson["title"] as String
         val body = componentJson["body"] as String
         val tag = componentJson["tag"] as String
@@ -46,7 +46,7 @@ class ApiFeedJsonAdapter(private val mediaAdapter: JsonAdapter<List<ApiMedia>>) 
     }
 
     private fun readQuestion(componentJson: Map<String, Any>): ApiFeed {
-        val code = componentJson["code"] as Int
+        val code = Integer.valueOf(componentJson["code"] as String) as Int
         val title = componentJson["title"] as String
         val body = componentJson["body"] as String
         val tag = componentJson["tag"] as String
@@ -56,7 +56,7 @@ class ApiFeedJsonAdapter(private val mediaAdapter: JsonAdapter<List<ApiMedia>>) 
     }
 
     private fun readQuiz(componentJson: Map<String, Any>): ApiFeed {
-        val code = componentJson["code"] as Int
+        val code = Integer.valueOf(componentJson["code"] as String) as Int
         val title = componentJson["title"] as String
         val body = componentJson["body"] as String
         val tag = componentJson["tag"] as String
