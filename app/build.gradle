@@ -71,7 +71,6 @@ dependencies {
     kapt libraries.app.dagger.processor
     kapt libraries.app.dagger.android.processor
     kapt libraries.app.glideProcessor
-    implementation libraries.app.kotlin
     implementation libraries.support.appcompat
     implementation libraries.support.v4
     implementation libraries.support.recyclerview
@@ -80,10 +79,7 @@ dependencies {
     implementation libraries.app.dagger.android.runtime
     implementation libraries.app.dagger.android.support
     implementation libraries.app.rxAndroid
-    implementation libraries.app.retrofit.lib
-    implementation libraries.app.okHttpLogging
 
-    implementation libraries.app.moshi
     implementation libraries.app.glide
 
     testImplementation libraries.test.junit
