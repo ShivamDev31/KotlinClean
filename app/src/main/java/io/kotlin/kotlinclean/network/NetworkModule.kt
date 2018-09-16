@@ -22,7 +22,7 @@ class NetworkModule(private val application: Application) {
 
     @Provides
     @Singleton
-    fun baseUrl(): HttpUrl? {
+    fun baseUrl(): HttpUrl {
         return HttpUrl.parse(BuildConfig.BASE_URL)
     }
 
