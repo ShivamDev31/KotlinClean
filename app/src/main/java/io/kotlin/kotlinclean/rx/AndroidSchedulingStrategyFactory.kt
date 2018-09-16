@@ -7,12 +7,14 @@ import io.reactivex.schedulers.Schedulers
 class AndroidSchedulingStrategyFactory(subscribingScheduler: Scheduler) :
         SchedulingStrategy.Factory(subscribingScheduler, AndroidSchedulers.mainThread()) {
 
-    fun newThread(): AndroidSchedulingStrategyFactory {
-        return AndroidSchedulingStrategyFactory(Schedulers.newThread())
-    }
+    companion object {
+        fun newThread(): AndroidSchedulingStrategyFactory {
+            return AndroidSchedulingStrategyFactory(Schedulers.newThread())
+        }
 
-    fun io(): AndroidSchedulingStrategyFactory {
-        return AndroidSchedulingStrategyFactory(Schedulers.io())
+        fun io(): AndroidSchedulingStrategyFactory {
+            return AndroidSchedulingStrategyFactory(Schedulers.io())
+        }
     }
 
 }

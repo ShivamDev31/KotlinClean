@@ -12,10 +12,10 @@ interface Feed {
     fun accept(visitor: Visitor)
 
     interface Visitor {
-        fun visit(questionsFeed: QuestionsFeed)
-        fun visit(questionsFeed: AdFeed)
-        fun visit(quizFeed: QuizFeed)
+        fun visit(adFeed: AdFeed)
         fun visit(tipFeed: TipFeed)
+        fun visit(quizFeed: QuizFeed)
+        fun visit(questionsFeed: QuestionsFeed)
     }
 
 }
