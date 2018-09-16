@@ -8,9 +8,9 @@ abstract class HealthFeedViewState {
 
     interface Visitor {
 
-        fun visit(healthFeedIdleViewState: HealthFeedIdleViewState)
-        fun visit(healthFeedErrorViewState: HealthFeedErrorViewState)
-        fun visit(healthFeedLoadingViewState: HealthFeedLoadingViewState)
+        fun visit(idleViewState: HealthFeedIdleViewState)
+        fun visit(errorViewState: HealthFeedErrorViewState)
+        fun visit(loadingViewState: HealthFeedLoadingViewState)
     }
 
 }
