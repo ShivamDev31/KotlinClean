@@ -13,7 +13,13 @@ class FeedActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        AndroidInjection.inject(this)
         setContentView(R.layout.activity_feed)
+        AndroidInjection.inject(this)
+        presenter.startPresenting()
+    }
+
+    override fun onDestroy() {
+        presenter.stopPresenting()
+        super.onDestroy()
     }
 }

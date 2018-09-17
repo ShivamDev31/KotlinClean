@@ -18,7 +18,7 @@ class NetworkModule(private val application: Application) {
 
     private val DEFAULT_DISK_CACHE_SIZE = 16 * 1024 * 1024 // 16MB
 
-    private lateinit var defaultCache: Cache
+    private val defaultCache = Cache(createCache(application, "default_cache"), DEFAULT_DISK_CACHE_SIZE.toLong())
 
     @Provides
     @Singleton
@@ -32,7 +32,7 @@ class NetworkModule(private val application: Application) {
         return NetworkDefaults.retrofit()
                 .newBuilder()
                 .client(newOkHttpClientWith(defaultCache))
-                .baseUrl(baseUrl())
+                .baseUrl(httpUrl)
                 .build()
     }
 
@@ -44,7 +44,7 @@ class NetworkModule(private val application: Application) {
         val okHttpClient = NetworkDefaults.okHttpClient()
                 .newBuilder()
                 .cache(cache)
-        if(BuildConfig.DEBUG) {
+        if (BuildConfig.DEBUG) {
             okHttpClient.addInterceptor(httpLoggingInterceptor())
         }
         return okHttpClient.build()

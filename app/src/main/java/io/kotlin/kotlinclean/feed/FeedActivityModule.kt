@@ -21,11 +21,6 @@ class FeedActivityModule {
     }
 
     @Provides
-    fun feedPresenter(navigator: Navigator): FeedPresenter {
-        return FeedPresenter.create(navigator)
-    }
-
-    @Provides
     fun feedFetcher(retrofit: Retrofit, moshi: Moshi): HealthFetcher {
         return HealthFeedApiFetcher.from(retrofit, moshi)
     }
@@ -34,6 +29,12 @@ class FeedActivityModule {
     fun feedUseCase(fetcher: HealthFetcher): FeedUseCase {
         val viewStateConverter = HealthFeedViewStateConverter()
         return FeedUseCase(fetcher, viewStateConverter, AndroidSchedulingStrategyFactory.io())
+    }
+
+    @Provides
+    fun feedPresenter(useCase: FeedUseCase, feedActivity: FeedActivity, imageLoader: ImageLoader, navigator: Navigator): FeedPresenter {
+        val feedView = FeedView.from(feedActivity, imageLoader)
+        return FeedPresenter.create(FeedDisplayer(feedView), useCase, navigator)
     }
 
 }
