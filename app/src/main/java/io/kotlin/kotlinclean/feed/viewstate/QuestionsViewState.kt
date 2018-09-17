@@ -3,6 +3,7 @@ package io.kotlin.kotlinclean.feed.viewstate
 class QuestionsViewState (
         val code: Int,
         val title: String,
+        val body: String,
         val tag: String,
         val supportText: String,
         val bannerImageVisibility: Int,

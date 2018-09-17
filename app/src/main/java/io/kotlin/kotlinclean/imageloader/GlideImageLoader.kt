@@ -22,6 +22,11 @@ class GlideImageLoader(private val diskCachingStrategy: DiskCacheStrategy, priva
         return GlideRequestBuilder(diskCachingStrategy, requestBuilder)
     }
 
+    override fun load(url: String): ImageLoader.RequestBuilder {
+        val requestBuilder: RequestBuilder<Drawable> = requestManager.load(url)
+        return GlideRequestBuilder(diskCachingStrategy, requestBuilder)
+    }
+
     override fun clear(imageView: ImageView) {
         requestManager.clear(imageView)
     }

@@ -21,6 +21,7 @@ class HealthFeedViewStateConverter : Converter<HealthFeed, HealthFeedViewState>,
         val adViewState = AdViewState(
                 adFeed.code,
                 adFeed.title,
+                adFeed.body,
                 adFeed.tag,
                 adFeed.supportText,
                 getImageVisibility(adFeed.imagePath),
@@ -32,6 +33,7 @@ class HealthFeedViewStateConverter : Converter<HealthFeed, HealthFeedViewState>,
         val tipViewState = TipViewState(
                 tipFeed.code,
                 tipFeed.title,
+                tipFeed.body,
                 tipFeed.tag,
                 tipFeed.supportText,
                 getImageVisibility(tipFeed.imagePath),
@@ -39,25 +41,27 @@ class HealthFeedViewStateConverter : Converter<HealthFeed, HealthFeedViewState>,
         viewStates.add(tipViewState)
     }
 
+    override fun visit(questionsFeed: QuestionsFeed) {
+        val questionsViewState = QuestionsViewState(
+                questionsFeed.code,
+                questionsFeed.title,
+                questionsFeed.tag,
+                questionsFeed.body,
+                questionsFeed.supportText,
+                getImageVisibility(questionsFeed.imagePath),
+                getImageUrl(questionsFeed.imagePath))
+        viewStates.add(questionsViewState)
+    }
+
     override fun visit(quizFeed: QuizFeed) {
-        val questionsFeed = QuizViewState(
+        val quizViewState = QuizViewState(
                 quizFeed.code,
                 quizFeed.title,
+                quizFeed.body,
                 quizFeed.tag,
                 quizFeed.supportText,
                 getImageVisibility(quizFeed.imagePath),
                 getImageUrl(quizFeed.imagePath))
-        viewStates.add(questionsFeed)
-    }
-
-    override fun visit(questionsFeed: QuestionsFeed) {
-        val quizViewState = QuizViewState(
-                questionsFeed.code,
-                questionsFeed.title,
-                questionsFeed.tag,
-                questionsFeed.supportText,
-                getImageVisibility(questionsFeed.imagePath),
-                getImageUrl(questionsFeed.imagePath))
         viewStates.add(quizViewState)
     }
 
